@@ -5,6 +5,8 @@ import HeroSlider from '@/components/HeroSlider';
 import ProductCard from '@/components/ProductCard';
 import CTASection from '@/components/CTASection';
 import LogoutToast from '@/components/LogoutToast';
+import FAQ from '@/components/FAQ';
+import Testimonials from '@/components/Testimonials';
 
 export default async function Home() {
   // Fetch products for popular section
@@ -200,6 +202,12 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* CTA Section */}
       <CTASection />
