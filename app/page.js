@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Suspense } from 'react';
+import fs from 'fs';
+import path from 'path';
 import HeroSlider from '@/components/HeroSlider';
 import ProductCard from '@/components/ProductCard';
 import CTASection from '@/components/CTASection';
@@ -9,11 +11,22 @@ import FAQ from '@/components/FAQ';
 import Testimonials from '@/components/Testimonials';
 
 export default async function Home() {
-  // Fetch products for popular section
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/products`, { cache: 'no-store' });
-  const data = await res.json();
-  const products = data?.products || [];
-  const popularProducts = products.slice(0, 8);
+  // Read products directly from JSON file (server-side)
+  let products = [];
+  let popularProducts = [];
+  
+  try {
+    const dataFilePath = path.join(process.cwd(), 'data', 'products.json');
+    const fileContents = fs.readFileSync(dataFilePath, 'utf8');
+    const data = JSON.parse(fileContents);
+    products = data?.products || [];
+    popularProducts = products.slice(0, 8);
+  } catch (error) {
+    console.error('Error reading products:', error);
+    // Fallback to empty array if file read fails
+    products = [];
+    popularProducts = [];
+  }
 
   const features = [
     {
