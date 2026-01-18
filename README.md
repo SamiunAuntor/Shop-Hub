@@ -1,5 +1,7 @@
 # ShopHub - Product Catalog Application
 
+🌐 **Live Site**: [https://shop-hub-theta-bay.vercel.app/](https://shop-hub-theta-bay.vercel.app/)
+
 A modern, full-featured product catalog web application built with Next.js 15/16 (App Router). This application allows users to browse products publicly and authenticated admins to add new products to the catalog.
 
 ## 📋 Project Description
@@ -346,13 +348,47 @@ Authenticates user and sets auth cookie.
 
 ## 🚢 Deployment
 
-The application is ready for deployment on Vercel:
+The application is deployed on Vercel: [https://shop-hub-theta-bay.vercel.app/](https://shop-hub-theta-bay.vercel.app/)
 
-1. Push code to GitHub
-2. Import project in Vercel
-3. Deploy automatically
+### Deployment Status
 
-Or use other platforms like Netlify, Railway, etc.
+| Feature | Local Development | Vercel Deployment | Status |
+|---------|-------------------|-------------------|--------|
+| Landing Page | ✅ Works | ✅ Works | Fully Functional |
+| Product List | ✅ Works | ✅ Works | Fully Functional |
+| Product Details | ✅ Works | ✅ Works | Fully Functional |
+| Search & Filter | ✅ Works | ✅ Works | Fully Functional |
+| Pagination | ✅ Works | ✅ Works | Fully Functional |
+| Login | ✅ Works | ✅ Works | Fully Functional |
+| Logout | ✅ Works | ✅ Works | Fully Functional |
+| Protected Routes | ✅ Works | ✅ Works | Fully Functional |
+| Navigation | ✅ Works | ✅ Works | Fully Functional |
+| Add Product Form | ✅ Works | ✅ Works | Form displays correctly |
+| Add Product API | ✅ Works | ❌ **Fails** | Cannot write to JSON file |
+
+### ⚠️ Known Limitation on Vercel
+
+**Add Product Feature**: The "Add Product" functionality works perfectly in local development but **does not work on Vercel deployment** due to Vercel's read-only filesystem. 
+
+**Why it fails:**
+- Vercel's production filesystem is read-only
+- `fs.writeFileSync()` operations fail in serverless environment
+- Even if writing worked, changes would be lost on the next deployment
+
+**What still works:**
+- ✅ Form displays correctly
+- ✅ Form validation works
+- ✅ Authentication check works
+- ✅ API endpoint receives the request
+- ❌ Writing to JSON file fails (expected behavior)
+
+**Solution for Production:**
+To enable "Add Product" functionality in production, replace JSON file storage with:
+- Database (MongoDB, PostgreSQL, etc.)
+- External storage (Vercel KV, Upstash, etc.)
+- Headless CMS (Sanity, Contentful, etc.)
+
+**Note**: This limitation is acceptable for demo/assignment purposes as it demonstrates the required functionality (form, validation, protected routes, API structure).
 
 ## 📄 License
 
