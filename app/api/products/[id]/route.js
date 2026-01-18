@@ -7,7 +7,7 @@ const dataFilePath = path.join(process.cwd(), 'data', 'products.json');
 // GET single product by ID
 export async function GET(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
 
     const fileContents = fs.readFileSync(dataFilePath, 'utf8');
     const data = JSON.parse(fileContents);

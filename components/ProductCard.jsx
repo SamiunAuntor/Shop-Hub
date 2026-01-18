@@ -17,7 +17,7 @@ export default function ProductCard({ product }) {
           fill
           className="object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        <div className={`absolute top-4 right-4 px-3 py-1.5 ${getCategoryColor(product.category)} text-white text-xs font-semibold rounded-full backdrop-blur-sm`}>
+        <div className={`absolute top-4 right-4 px-2.5 py-1.5 ${getCategoryColor(product.category)} text-white text-xs font-semibold rounded-md backdrop-blur-sm`}>
           {product.category}
         </div>
       </div>
