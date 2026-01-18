@@ -2,201 +2,201 @@
   "products": [
     {
       "id": "1",
-      "name": "Wireless Bluetooth Headphones",
-      "description": "Premium noise-cancelling wireless headphones with 30-hour battery life and superior sound quality. Perfect for music lovers and professionals.",
-      "price": 16499,
-      "category": "electronics",
-      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80"
-    },
-    {
-      "id": "2",
-      "name": "Smart Fitness Watch",
-      "description": "Advanced fitness tracking watch with heart rate monitor, GPS, and 7-day battery life. Track your workouts and stay healthy.",
-      "price": 27499,
-      "category": "electronics",
-      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80"
-    },
-    {
-      "id": "3",
-      "name": "Wireless Earbuds Pro",
-      "description": "Premium wireless earbuds with active noise cancellation and crystal-clear audio quality for your daily commute.",
-      "price": 19799,
-      "category": "electronics",
-      "image": "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=800&q=80"
-    },
-    {
-      "id": "4",
-      "name": "Smartphone Pro Max",
-      "description": "Latest flagship smartphone with advanced camera system, fast processor, and all-day battery life. Perfect for photography and productivity.",
-      "price": 98989,
+      "name": "iPhone 15 Pro Max 256GB",
+      "description": "Latest Apple iPhone with A17 Pro chip, 48MP main camera, ProMotion display, and Titanium design. 256GB storage capacity with advanced camera system and all-day battery life.",
+      "price": 169900,
       "category": "electronics",
       "image": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80"
     },
     {
-      "id": "5",
-      "name": "Laptop Gaming Edition",
-      "description": "High-performance gaming laptop with powerful graphics card, fast SSD storage, and stunning display. Ideal for gamers and creators.",
-      "price": 142999,
+      "id": "2",
+      "name": "AirPods Pro (2nd Generation)",
+      "description": "Apple AirPods Pro with Active Noise Cancellation, Spatial Audio, and Adaptive EQ. Features H2 chip for enhanced sound quality and up to 6 hours of listening time.",
+      "price": 44900,
+      "category": "electronics",
+      "image": "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=800&q=80"
+    },
+    {
+      "id": "3",
+      "name": "MacBook Air M3 13-inch",
+      "description": "Apple MacBook Air powered by M3 chip, 13-inch Liquid Retina display, 8GB unified memory, and 256GB SSD storage. Ultra-thin design perfect for productivity and creativity.",
+      "price": 149900,
       "category": "electronics",
       "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80"
     },
     {
+      "id": "4",
+      "name": "Apple Watch Series 9 GPS",
+      "description": "Apple Watch Series 9 with 45mm case, GPS, Always-On Retina display, and advanced health features including heart rate monitoring, sleep tracking, and fitness metrics.",
+      "price": 62900,
+      "category": "electronics",
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80"
+    },
+    {
+      "id": "5",
+      "name": "iPad Air M2 256GB",
+      "description": "Apple iPad Air with M2 chip, 11-inch Liquid Retina display, 256GB storage, and Apple Pencil support. Perfect for creative work, note-taking, and entertainment.",
+      "price": 89900,
+      "category": "electronics",
+      "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&q=80"
+    },
+    {
       "id": "6",
-      "name": "Classic Leather Jacket",
-      "description": "Genuine leather jacket with premium stitching and modern design. Perfect for any occasion, available in multiple sizes.",
-      "price": 32999,
+      "name": "Levi's 501 Original Fit Jeans",
+      "description": "Classic Levi's 501 Original Fit jeans in dark blue wash. Premium denim with button fly, straight leg, and timeless design. Made from 100% cotton for durability and comfort.",
+      "price": 8990,
       "category": "clothing",
-      "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80"
     },
     {
       "id": "7",
-      "name": "Cotton T-Shirt Set",
-      "description": "Comfortable cotton t-shirts in various colors. Soft, breathable fabric perfect for everyday wear.",
-      "price": 2749,
+      "name": "Zara Basic Cotton T-Shirt",
+      "description": "Premium cotton t-shirt from Zara in various colors. Soft, breathable fabric with classic fit. Perfect for everyday casual wear and layering.",
+      "price": 2990,
       "category": "clothing",
       "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"
     },
     {
       "id": "8",
-      "name": "Denim Jeans Classic",
-      "description": "Premium quality denim jeans with perfect fit and durability. Classic blue wash with modern styling and comfort.",
-      "price": 8799,
-      "category": "clothing",
-      "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80"
-    },
-    {
-      "id": "9",
-      "name": "Winter Wool Sweater",
-      "description": "Cozy wool sweater perfect for cold weather. Soft, warm, and stylish design available in multiple colors.",
-      "price": 9899,
+      "name": "H&M Winter Wool Sweater",
+      "description": "Cozy wool-blend sweater from H&M perfect for cold weather. Soft, warm material with modern design. Available in multiple colors and sizes for men and women.",
+      "price": 3490,
       "category": "clothing",
       "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"
     },
     {
-      "id": "10",
-      "name": "Summer Casual Dress",
-      "description": "Lightweight and breathable summer dress with elegant design. Perfect for casual outings and special occasions.",
-      "price": 6599,
+      "id": "9",
+      "name": "Nike Dri-FIT Sports T-Shirt",
+      "description": "Nike Dri-FIT moisture-wicking performance t-shirt for sports and workouts. Breathable fabric with classic Nike design. Ideal for running, gym, and active lifestyle.",
+      "price": 3590,
       "category": "clothing",
-      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"
+    },
+    {
+      "id": "10",
+      "name": "Adidas Classic Track Jacket",
+      "description": "Adidas Originals track jacket with iconic three-stripe design. Lightweight and comfortable with zip-up front. Perfect for casual wear and light athletic activities.",
+      "price": 6490,
+      "category": "clothing",
+      "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80"
     },
     {
       "id": "11",
-      "name": "The Art of Programming",
-      "description": "Comprehensive guide to computer programming and software development. Learn from industry experts with real-world examples.",
-      "price": 4399,
+      "name": "Humayun Ahmed - Debi",
+      "description": "Classic Bengali novel by Humayun Ahmed. A captivating story of love, loss, and human emotions. One of the most beloved books in Bengali literature.",
+      "price": 450,
       "category": "books",
       "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&q=80"
     },
     {
       "id": "12",
-      "name": "Web Development Mastery",
-      "description": "Complete guide to modern web development covering HTML, CSS, JavaScript, and popular frameworks. Perfect for beginners and advanced developers.",
-      "price": 5059,
+      "name": "Sharat Chandra Chattopadhyay - Srikanto",
+      "description": "Epic Bengali novel by Sharat Chandra Chattopadhyay. A timeless classic exploring human relationships, society, and personal growth in rural Bengal.",
+      "price": 380,
       "category": "books",
       "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&q=80"
     },
     {
       "id": "13",
-      "name": "Data Science Handbook",
-      "description": "Essential handbook for data scientists covering machine learning, statistics, and data analysis techniques with practical examples.",
-      "price": 5499,
+      "name": "Python Crash Course - Eric Matthes",
+      "description": "Complete guide to Python programming for beginners. Learn Python fundamentals with hands-on projects and exercises. Perfect for aspiring programmers and developers.",
+      "price": 1299,
       "category": "books",
       "image": "https://images.unsplash.com/photo-1557853197-aefb550b6fdc?w=800&q=80"
     },
     {
       "id": "14",
-      "name": "JavaScript: The Complete Guide",
-      "description": "Master JavaScript from basics to advanced concepts. Includes modern ES6+ features, async programming, and best practices.",
-      "price": 4729,
+      "name": "You Don't Know JS - Kyle Simpson",
+      "description": "Deep dive into JavaScript language mechanics. Advanced concepts for serious developers. Part of the popular 'You Don't Know JS' series covering JavaScript in depth.",
+      "price": 1499,
       "category": "books",
       "image": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80"
     },
     {
       "id": "15",
-      "name": "Python Programming Essentials",
-      "description": "Learn Python programming from scratch. Covers fundamentals, object-oriented programming, and popular libraries for data science.",
-      "price": 4949,
+      "name": "Clean Code - Robert C. Martin",
+      "description": "A Handbook of Agile Software Craftsmanship. Learn to write clean, maintainable code with best practices and design principles. Essential reading for professional developers.",
+      "price": 1599,
       "category": "books",
       "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80"
     },
     {
       "id": "16",
-      "name": "Modern Coffee Table",
-      "description": "Sleek and modern coffee table made from sustainable wood. Perfect centerpiece for any living room.",
-      "price": 20899,
-      "category": "home",
-      "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"
-    },
-    {
-      "id": "17",
-      "name": "Comfortable Sofa Set",
-      "description": "Luxurious three-seater sofa with premium upholstery. Perfect for family living rooms with modern design and maximum comfort.",
-      "price": 65999,
+      "name": "Hathi Premium Sofa Set (3+2+1)",
+      "description": "Luxurious 3-seater, 2-seater, and single-seater sofa set from Hathi. Premium quality upholstery with comfortable cushions. Perfect for modern living rooms with elegant design.",
+      "price": 129900,
       "category": "home",
       "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"
     },
     {
+      "id": "17",
+      "name": "Hathi Dining Table Set (6 Seater)",
+      "description": "Modern dining table with 6 matching chairs from Hathi. Solid wood construction with elegant finish. Perfect for family dinners and gatherings.",
+      "price": 89900,
+      "category": "home",
+      "image": "https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=800&q=80"
+    },
+    {
       "id": "18",
-      "name": "Bedroom Wardrobe",
-      "description": "Spacious wardrobe with multiple compartments and drawers. Modern design with ample storage space for all your clothing needs.",
-      "price": 49499,
+      "name": "Hathi Wardrobe with Mirror (5 Door)",
+      "description": "Spacious 5-door wardrobe from Hathi with full-length mirror. Multiple compartments and drawers for organized storage. Modern design with quality wood construction.",
+      "price": 64900,
       "category": "home",
       "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"
     },
     {
       "id": "19",
-      "name": "Dining Table Set",
-      "description": "Elegant dining table with matching chairs. Perfect for family dinners and gatherings with classic wood finish.",
-      "price": 43999,
+      "name": "Hathi Coffee Table with Storage",
+      "description": "Modern coffee table with hidden storage compartment from Hathi. Sleek design perfect for living rooms. Made from high-quality materials with smooth finish.",
+      "price": 18900,
       "category": "home",
-      "image": "https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"
     },
     {
       "id": "20",
-      "name": "Modern Lamp Stand",
-      "description": "Stylish floor lamp with adjustable height and brightness. Perfect for reading corners and living spaces with modern aesthetics.",
-      "price": 8799,
+      "name": "Hathi Study Table with Bookshelf",
+      "description": "Multifunctional study table with attached bookshelf from Hathi. Perfect for students and home offices. Spacious work surface with organized storage compartments.",
+      "price": 24900,
       "category": "home",
       "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80"
     },
     {
       "id": "21",
-      "name": "Professional Running Shoes",
-      "description": "Lightweight running shoes with superior cushioning and breathable mesh. Designed for optimal performance and comfort.",
-      "price": 14299,
+      "name": "Nike Air Max Running Shoes",
+      "description": "Professional running shoes from Nike with Air Max cushioning technology. Superior comfort and performance for long-distance running. Breathable mesh upper with excellent grip.",
+      "price": 12490,
       "category": "sports",
       "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80"
     },
     {
       "id": "22",
-      "name": "Yoga Mat Premium",
-      "description": "High-quality yoga mat with non-slip surface and extra cushioning. Perfect for yoga, pilates, and fitness workouts.",
-      "price": 3849,
-      "category": "sports",
-      "image": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=800&q=80"
-    },
-    {
-      "id": "23",
-      "name": "Basketball Official Size",
-      "description": "Professional-grade basketball with excellent grip and durability. Perfect for indoor and outdoor courts with official size and weight.",
-      "price": 5059,
+      "name": "Adidas Football (Size 5)",
+      "description": "Official size 5 football from Adidas. Professional quality with excellent grip and durability. Perfect for training and competitive matches. FIFA approved.",
+      "price": 3490,
       "category": "sports",
       "image": "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=80"
     },
     {
-      "id": "24",
-      "name": "Tennis Racket Pro",
-      "description": "Professional tennis racket with carbon fiber frame and advanced string technology. Designed for competitive play and power.",
-      "price": 17599,
+      "id": "23",
+      "name": "Wilson Tennis Racket Pro Staff",
+      "description": "Professional tennis racket from Wilson with carbon fiber construction. Advanced string technology for power and control. Used by professional players worldwide.",
+      "price": 18990,
       "category": "sports",
-      "image": "https://images.unsplash.com/photo-1622163642992-8584342d4cb9?w=800&q=80"
+      "image": "https://images.unsplash.com/photo-1587949160102-88dc89ef6f8e?w=800&q=80"
+    },
+    {
+      "id": "24",
+      "name": "Yonex Badminton Racket ArcSaber",
+      "description": "High-performance badminton racket from Yonex. Lightweight design with excellent control and power. Perfect for competitive play and training sessions.",
+      "price": 8990,
+      "category": "sports",
+      "image": "https://images.unsplash.com/photo-1568957845707-13ff82cd424f?w=800&q=80"
     },
     {
       "id": "25",
-      "name": "Fitness Dumbbells Set",
-      "description": "Adjustable dumbbell set with multiple weight options. Perfect for home workouts and strength training exercises.",
-      "price": 9899,
+      "name": "Reebok Adjustable Dumbbells Set (20kg)",
+      "description": "Adjustable dumbbell set from Reebok with weight range up to 20kg. Space-saving design perfect for home gym. Easy weight adjustment with secure locking mechanism.",
+      "price": 12490,
       "category": "sports",
       "image": "https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&q=80"
     }

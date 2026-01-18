@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 
 export default function Navbar() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -127,23 +128,91 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
-            {isAuthenticated ? (
-              <button
-                onClick={handleLogout}
-                className="px-4 py-2 bg-gray-900 text-white rounded-lg text-sm font-semibold hover:bg-gray-800 transition-colors"
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-gray-700 hover:text-[#2563eb] transition-colors"
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                Logout
-              </button>
-            ) : (
-              <Link
-                href="/login"
-                className="px-4 py-2 bg-[#2563eb] text-white rounded-lg text-sm font-semibold hover:bg-[#1e40af] transition-colors"
-              >
-                Login
-              </Link>
-            )}
+                {mobileMenuOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-gray-200 bg-white">
+            <div className="px-8 py-4 space-y-4">
+              <Link
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block font-medium transition-colors ${
+                  pathname === '/'
+                    ? 'text-[#2563eb] font-semibold'
+                    : 'text-gray-700 hover:text-[#2563eb]'
+                }`}
+              >
+                Home
+              </Link>
+              <Link
+                href="/products"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block font-medium transition-colors ${
+                  pathname?.startsWith('/products') && pathname !== '/products/add'
+                    ? 'text-[#2563eb] font-semibold'
+                    : 'text-gray-700 hover:text-[#2563eb]'
+                }`}
+              >
+                Browse Products
+              </Link>
+              {isAuthenticated && (
+                <Link
+                  href="/products/add"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`block font-medium transition-colors ${
+                    pathname === '/products/add'
+                      ? 'text-[#2563eb] font-semibold'
+                      : 'text-gray-700 hover:text-[#2563eb]'
+                  }`}
+                >
+                  Add Product
+                </Link>
+              )}
+              {isAuthenticated ? (
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    handleLogout();
+                  }}
+                  className="w-full text-left px-0 py-2 text-gray-700 hover:text-[#2563eb] font-medium transition-colors"
+                >
+                  Logout
+                </button>
+              ) : (
+                <Link
+                  href="/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full px-6 py-2.5 bg-[#2563eb] text-white rounded-lg font-semibold hover:bg-[#1e40af] transition-colors text-sm text-center"
+                >
+                  Login
+                </Link>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
