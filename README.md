@@ -90,6 +90,8 @@ ShopHub is a responsive product catalog application that demonstrates modern web
 - ✅ **Mobile Navigation**: Hamburger menu for mobile devices
 - ✅ **FAQ Accordion**: Only one question open at a time
 - ✅ **Customer Testimonials**: Social proof with ratings and customer photos
+- ✅ **Password Show/Hide Toggle**: Eye icon to toggle password visibility on login page
+- ✅ **Modern Icons**: Lucide React icons for better visual consistency
 
 ## 🛠️ Technologies Used
 
@@ -97,6 +99,7 @@ ShopHub is a responsive product catalog application that demonstrates modern web
 - **JavaScript (JSX)** - No TypeScript
 - **Tailwind CSS** (for styling)
 - **React Sweet Alert 2** (for notifications and alerts)
+- **Lucide React** (for modern icons)
 - **Next.js API Routes** (for backend functionality - replaces Express.js server)
 - **JSON File Storage** (`data/products.json` for data persistence)
 - **Google Fonts** (Saira font family)
