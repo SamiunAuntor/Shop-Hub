@@ -58,6 +58,7 @@ export default function Navbar() {
     logout();
     setIsAuthenticated(false);
     router.push('/');
+    window.scrollTo(0, 0);
   };
 
   return (

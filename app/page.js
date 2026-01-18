@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import HeroSlider from '@/components/HeroSlider';
 import ProductCard from '@/components/ProductCard';
+import CTASection from '@/components/CTASection';
 
 export default async function Home() {
   // Fetch products for popular section
@@ -81,7 +82,7 @@ export default async function Home() {
         <div className="w-full px-8 md:px-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Why Choose ShopHub?
+              <span className="text-gray-900">Why Choose</span> <span className="text-[#2563eb]">Shop</span><span className="text-[#2563eb]">Hub</span><span className="text-[#2563eb]">?</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Your trusted online marketplace in Bangladesh
@@ -132,7 +133,7 @@ export default async function Home() {
           <div className="flex justify-between items-center mb-10">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-                Trending Products
+                <span className="text-gray-900">Trending</span> <span className="text-[#2563eb]">Products</span>
               </h2>
               <p className="text-lg text-gray-600">
                 Best sellers this week
@@ -142,7 +143,7 @@ export default async function Home() {
               href="/products"
               className="hidden md:block px-6 py-3 bg-[#2563eb] text-white rounded-lg font-semibold hover:bg-[#1e40af] transition-colors"
             >
-              View All
+              View All Products →
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -155,7 +156,7 @@ export default async function Home() {
               href="/products"
               className="inline-block px-6 py-3 bg-[#2563eb] text-white rounded-lg font-semibold hover:bg-[#1e40af] transition-colors"
             >
-              View All Products
+              View All Products →
             </Link>
           </div>
         </div>
@@ -166,7 +167,7 @@ export default async function Home() {
         <div className="w-full px-8 md:px-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Shop by Category
+              <span className="text-gray-900">Shop by</span> <span className="text-[#2563eb]">Category</span>
             </h2>
             <p className="text-lg text-gray-600">
               Browse our wide range of categories
@@ -196,30 +197,7 @@ export default async function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="w-full px-8 md:px-10 max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Ready to Start Shopping?
-          </h2>
-          <p className="text-xl text-gray-600 mb-10">
-            Join thousands of satisfied customers in Bangladesh!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/products"
-              className="px-8 py-4 bg-[#2563eb] text-white rounded-lg font-semibold text-lg hover:bg-[#1e40af] transition-colors shadow-md"
-            >
-              Browse All Products →
-            </Link>
-            <Link
-              href="/login"
-              className="px-8 py-4 bg-white border-2 border-[#2563eb] text-[#2563eb] rounded-lg font-semibold text-lg hover:bg-gray-50 transition-colors"
-            >
-              Create Account
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

@@ -38,8 +38,9 @@ export default function LoginPage() {
           timer: 2000,
           timerProgressBar: true,
         });
-        // Force page reload to update auth state
-        window.location.href = '/products';
+        // Force page reload to update auth state and scroll to top
+        window.location.href = '/';
+        window.scrollTo(0, 0);
       } else {
         setError(data.error || 'Login failed');
       }
@@ -79,8 +80,9 @@ export default function LoginPage() {
             timer: 2000,
             timerProgressBar: true,
           });
-          // Force page reload to update auth state
-          window.location.href = '/products';
+          // Force page reload to update auth state and scroll to top
+          window.location.href = '/';
+          window.scrollTo(0, 0);
         } else {
           setError(data.error || 'Login failed');
         }

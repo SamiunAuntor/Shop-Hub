@@ -105,7 +105,7 @@ export default function ProductDetailsPage() {
               <div className="space-y-3">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button className="flex-1 px-6 py-2.5 bg-[#2563eb] text-white rounded-lg font-semibold text-sm hover:bg-[#1e40af] transition-colors shadow-md">
-                    Add to Cart <span className="text-xs opacity-90">(Coming Soon)</span>
+                    Add to Cart
                   </button>
                   <button className="flex-1 px-6 py-2.5 border-2 border-[#2563eb] text-[#2563eb] rounded-lg font-semibold text-sm hover:bg-gray-50 transition-colors">
                     Save for Later
