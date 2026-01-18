@@ -30,17 +30,8 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (response.ok) {
-        await Swal.fire({
-          icon: 'success',
-          title: 'Successfully Logged In!',
-          text: 'Welcome back to ShopHub',
-          showConfirmButton: true,
-          timer: 2000,
-          timerProgressBar: true,
-        });
-        // Force page reload to update auth state and scroll to top
-        window.location.href = '/';
-        window.scrollTo(0, 0);
+        // Redirect first with param to show toast on products page
+        window.location.href = '/products?fromLogin=true';
       } else {
         setError(data.error || 'Login failed');
       }
@@ -72,17 +63,8 @@ export default function LoginPage() {
         const data = await response.json();
 
         if (response.ok) {
-          await Swal.fire({
-            icon: 'success',
-            title: 'Successfully Logged In!',
-            text: 'Welcome back to ShopHub',
-            showConfirmButton: true,
-            timer: 2000,
-            timerProgressBar: true,
-          });
-          // Force page reload to update auth state and scroll to top
-          window.location.href = '/';
-          window.scrollTo(0, 0);
+          // Redirect first with param to show toast on products page
+          window.location.href = '/products?fromLogin=true';
         } else {
           setError(data.error || 'Login failed');
         }

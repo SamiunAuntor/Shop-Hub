@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Suspense } from 'react';
 import HeroSlider from '@/components/HeroSlider';
 import ProductCard from '@/components/ProductCard';
 import CTASection from '@/components/CTASection';
+import LogoutToast from '@/components/LogoutToast';
 
 export default async function Home() {
   // Fetch products for popular section
@@ -48,6 +50,9 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Suspense fallback={null}>
+        <LogoutToast />
+      </Suspense>
       {/* Hero Section - Edge to Edge */}
       <section>
         <HeroSlider />

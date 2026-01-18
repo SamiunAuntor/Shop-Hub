@@ -19,6 +19,28 @@ export default function ProductsPage() {
 
   useEffect(() => {
     fetchProducts();
+    
+    // Check if user just logged in (check URL params or sessionStorage)
+    const checkLoginRedirect = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const fromLogin = urlParams.get('fromLogin');
+      
+      if (fromLogin === 'true') {
+        // Show success toast after redirect
+        Swal.fire({
+          icon: 'success',
+          title: 'Successfully Logged In!',
+          text: 'Welcome back to ShopHub',
+          showConfirmButton: true,
+          timer: 2000,
+          timerProgressBar: true,
+        });
+        // Clean up URL
+        window.history.replaceState({}, '', '/products');
+      }
+    };
+    
+    checkLoginRedirect();
   }, []);
 
   useEffect(() => {

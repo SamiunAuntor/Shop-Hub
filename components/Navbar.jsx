@@ -46,18 +46,11 @@ export default function Navbar() {
     };
   }, []);
 
-  const handleLogout = async () => {
-    await Swal.fire({
-      icon: 'success',
-      title: 'Successfully Logged Out!',
-      text: 'You have been logged out successfully',
-      showConfirmButton: true,
-      timer: 2000,
-      timerProgressBar: true,
-    });
+  const handleLogout = () => {
+    // Logout first, then redirect and show toast on homepage
     logout();
     setIsAuthenticated(false);
-    router.push('/');
+    router.push('/?loggedOut=true');
     window.scrollTo(0, 0);
   };
 
