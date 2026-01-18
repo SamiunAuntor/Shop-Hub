@@ -104,6 +104,11 @@ export default function ProductsPage() {
   const endIndex = startIndex + itemsPerPage;
   const currentProducts = filteredProducts.slice(startIndex, endIndex);
 
+  // Calculate display range for pagination text
+  const startItem = filteredProducts.length > 0 ? startIndex + 1 : 0;
+  const endItem = Math.min(endIndex, filteredProducts.length);
+  const totalItems = filteredProducts.length;
+
   const handlePageChange = (page) => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -146,7 +151,19 @@ export default function ProductsPage() {
         {/* Results count */}
         <div className="mb-6">
           <p className="text-gray-600 font-medium">
-            Showing <span className="font-bold text-[#2563eb]">{filteredProducts.length}</span> of <span className="font-bold">{products.length}</span> products
+            {totalItems > 0 ? (
+              <>
+                Showing <span className="font-bold text-[#2563eb]">{startItem}</span>
+                {startItem !== endItem && (
+                  <>
+                    -<span className="font-bold text-[#2563eb]">{endItem}</span>
+                  </>
+                )}
+                {' '}of <span className="font-bold">{totalItems}</span> products
+              </>
+            ) : (
+              <>No products found</>
+            )}
           </p>
         </div>
 
