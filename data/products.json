@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Wireless Bluetooth Headphones",
+      "description": "Premium noise-cancelling wireless headphones with 30-hour battery life and superior sound quality. Perfect for music lovers and professionals.",
+      "price": 149.99,
+      "category": "electronics",
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80"
+    },
+    {
+      "id": "2",
+      "name": "Smart Fitness Watch",
+      "description": "Advanced fitness tracking watch with heart rate monitor, GPS, and 7-day battery life. Track your workouts and stay healthy.",
+      "price": 249.99,
+      "category": "electronics",
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80"
+    },
+    {
+      "id": "3",
+      "name": "Classic Leather Jacket",
+      "description": "Genuine leather jacket with premium stitching and modern design. Perfect for any occasion, available in multiple sizes.",
+      "price": 299.99,
+      "category": "clothing",
+      "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80"
+    },
+    {
+      "id": "4",
+      "name": "The Art of Programming",
+      "description": "Comprehensive guide to computer programming and software development. Learn from industry experts with real-world examples.",
+      "price": 39.99,
+      "category": "books",
+      "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&q=80"
+    },
+    {
+      "id": "5",
+      "name": "Modern Coffee Table",
+      "description": "Sleek and modern coffee table made from sustainable wood. Perfect centerpiece for any living room.",
+      "price": 189.99,
+      "category": "home",
+      "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"
+    },
+    {
+      "id": "6",
+      "name": "Professional Running Shoes",
+      "description": "Lightweight running shoes with superior cushioning and breathable mesh. Designed for optimal performance and comfort.",
+      "price": 129.99,
+      "category": "sports",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80"
+    },
+    {
+      "id": "7",
+      "name": "Wireless Earbuds Pro",
+      "description": "Premium wireless earbuds with active noise cancellation and crystal-clear audio quality for your daily commute.",
+      "price": 179.99,
+      "category": "electronics",
+      "image": "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=800&q=80"
+    },
+    {
+      "id": "8",
+      "name": "Cotton T-Shirt Set",
+      "description": "Comfortable cotton t-shirts in various colors. Soft, breathable fabric perfect for everyday wear.",
+      "price": 24.99,
+      "category": "clothing",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"
+    }
+  ]
+}
