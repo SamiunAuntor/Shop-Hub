@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { logout } from '@/lib/auth';
 import { useRouter, usePathname } from 'next/navigation';
+import Swal from 'sweetalert2';
 
 export default function Navbar() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -13,19 +14,47 @@ export default function Navbar() {
   useEffect(() => {
     // Check authentication status
     const checkAuth = () => {
-      const authToken = document.cookie
-        .split(';')
-        .find(c => c.trim().startsWith('auth-token='));
-      setIsAuthenticated(!!authToken);
+      if (typeof document !== 'undefined') {
+        const cookies = document.cookie.split(';');
+        let isAuth = false;
+        
+        for (let cookie of cookies) {
+          const [name, value] = cookie.trim().split('=');
+          if (name === 'auth-token' && value === 'authenticated') {
+            isAuth = true;
+            break;
+          }
+        }
+        
+        setIsAuthenticated(isAuth);
+      }
     };
     
+    // Initial check
     checkAuth();
-    // Check every second for auth changes (simple approach)
-    const interval = setInterval(checkAuth, 1000);
-    return () => clearInterval(interval);
+    
+    // Check every 500ms for auth changes (especially after login)
+    const interval = setInterval(checkAuth, 500);
+    
+    // Also check when window gains focus (in case of tab switches)
+    const handleFocus = () => checkAuth();
+    window.addEventListener('focus', handleFocus);
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('focus', handleFocus);
+    };
   }, []);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    await Swal.fire({
+      icon: 'success',
+      title: 'Successfully Logged Out!',
+      text: 'You have been logged out successfully',
+      showConfirmButton: true,
+      timer: 2000,
+      timerProgressBar: true,
+    });
     logout();
     setIsAuthenticated(false);
     router.push('/');
@@ -104,12 +133,21 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
-            <Link
-              href="/login"
-              className="px-4 py-2 bg-[#2563eb] text-white rounded-lg text-sm font-semibold"
-            >
-              {isAuthenticated ? 'Logout' : 'Login'}
-            </Link>
+            {isAuthenticated ? (
+              <button
+                onClick={handleLogout}
+                className="px-4 py-2 bg-gray-900 text-white rounded-lg text-sm font-semibold hover:bg-gray-800 transition-colors"
+              >
+                Logout
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="px-4 py-2 bg-[#2563eb] text-white rounded-lg text-sm font-semibold hover:bg-[#1e40af] transition-colors"
+              >
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </div>

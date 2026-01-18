@@ -23,9 +23,9 @@ export async function POST(request) {
         { status: 200 }
       );
 
-      // Set cookie
+      // Set cookie (httpOnly: false so client-side JS can read it)
       response.cookies.set('auth-token', 'authenticated', {
-        httpOnly: true,
+        httpOnly: false,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax',
         maxAge: 60 * 60 * 24 * 7, // 7 days

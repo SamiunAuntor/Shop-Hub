@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { toast } from 'react-hot-toast';
+import Swal from 'sweetalert2';
 import LoadingSpinner from '@/components/LoadingSpinner';
 
 const categories = ['electronics', 'clothing', 'books', 'home', 'sports', 'other'];
@@ -50,13 +50,23 @@ export default function AddProductPage() {
 
     // Validation
     if (!formData.name || !formData.description || !formData.price || !formData.category || !formData.image) {
-      toast.error('Please fill in all fields');
+      await Swal.fire({
+        icon: 'error',
+        title: 'Validation Error',
+        text: 'Please fill in all fields',
+        confirmButtonColor: '#2563eb',
+      });
       setSubmitting(false);
       return;
     }
 
     if (isNaN(parseFloat(formData.price)) || parseFloat(formData.price) <= 0) {
-      toast.error('Please enter a valid price');
+      await Swal.fire({
+        icon: 'error',
+        title: 'Invalid Price',
+        text: 'Please enter a valid price',
+        confirmButtonColor: '#2563eb',
+      });
       setSubmitting(false);
       return;
     }
@@ -73,7 +83,14 @@ export default function AddProductPage() {
       const data = await response.json();
 
       if (response.ok) {
-        toast.success('Product added successfully!');
+        await Swal.fire({
+          icon: 'success',
+          title: 'Product Added Successfully!',
+          text: 'Your product has been added to the catalog',
+          showConfirmButton: true,
+          timer: 2000,
+          timerProgressBar: true,
+        });
         // Reset form
         setFormData({
           name: '',
@@ -82,15 +99,23 @@ export default function AddProductPage() {
           category: '',
           image: '',
         });
-        // Redirect to products page after a short delay
-        setTimeout(() => {
-          router.push('/products');
-        }, 1500);
+        // Redirect to products page
+        router.push('/products');
       } else {
-        toast.error(data.error || 'Failed to add product');
+        await Swal.fire({
+          icon: 'error',
+          title: 'Failed to Add Product',
+          text: data.error || 'Failed to add product',
+          confirmButtonColor: '#2563eb',
+        });
       }
     } catch (error) {
-      toast.error('An error occurred. Please try again.');
+      await Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'An error occurred. Please try again.',
+        confirmButtonColor: '#2563eb',
+      });
     } finally {
       setSubmitting(false);
     }
@@ -105,15 +130,16 @@ export default function AddProductPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="w-full px-8 md:px-10 max-w-3xl mx-auto">
-        <div className="mb-8">
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="w-full px-8 md:px-10">
+        {/* Header Section */}
+        <div className="mb-10">
           <Link
             href="/products"
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-4"
+            className="inline-flex items-center text-[#2563eb] hover:text-[#1e40af] font-medium mb-6 transition-colors group"
           >
             <svg
-              className="w-5 h-5 mr-2"
+              className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -127,21 +153,22 @@ export default function AddProductPage() {
             </svg>
             Back to Products
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
             Add New Product
           </h1>
-          <p className="text-gray-600">
+          <p className="text-lg text-gray-600">
             Fill in the form below to add a new product to the catalog
           </p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Form Section - Full Width */}
+        <div className="bg-white rounded-xl shadow-lg p-8 md:p-12">
+          <form onSubmit={handleSubmit} className="max-w-3xl mx-auto space-y-6">
             {/* Product Name */}
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-semibold text-gray-700 mb-2"
               >
                 Product Name <span className="text-red-500">*</span>
               </label>
@@ -152,7 +179,7 @@ export default function AddProductPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-[#2563eb] transition-all"
                 placeholder="Enter product name"
               />
             </div>
@@ -161,7 +188,7 @@ export default function AddProductPage() {
             <div>
               <label
                 htmlFor="description"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-semibold text-gray-700 mb-2"
               >
                 Description <span className="text-red-500">*</span>
               </label>
@@ -172,63 +199,73 @@ export default function AddProductPage() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-[#2563eb] transition-all resize-none"
                 placeholder="Enter product description"
               />
             </div>
 
-            {/* Price */}
-            <div>
-              <label
-                htmlFor="price"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Price <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="number"
-                id="price"
-                name="price"
-                value={formData.price}
-                onChange={handleChange}
-                required
-                min="0"
-                step="0.01"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="0.00"
-              />
-            </div>
+            {/* Price and Category - Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Price */}
+              <div>
+                <label
+                  htmlFor="price"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
+                  Price <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="number"
+                  id="price"
+                  name="price"
+                  value={formData.price}
+                  onChange={handleChange}
+                  required
+                  min="0"
+                  step="0.01"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-[#2563eb] transition-all"
+                  placeholder="0.00"
+                />
+              </div>
 
-            {/* Category */}
-            <div>
-              <label
-                htmlFor="category"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Category <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="category"
-                name="category"
-                value={formData.category}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              >
-                <option value="">Select a category</option>
-                {categories.map((category) => (
-                  <option key={category} value={category}>
-                    {category.charAt(0).toUpperCase() + category.slice(1)}
-                  </option>
-                ))}
-              </select>
+              {/* Category */}
+              <div>
+                <label
+                  htmlFor="category"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
+                  Category <span className="text-red-500">*</span>
+                </label>
+                <select
+                  id="category"
+                  name="category"
+                  value={formData.category}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-[#2563eb] transition-all appearance-none"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right 0.75rem center',
+                    backgroundSize: '1.25em 1.25em',
+                    paddingRight: '2.5rem',
+                  }}
+                >
+                  <option value="">Select a category</option>
+                  {categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
 
             {/* Image */}
             <div>
               <label
                 htmlFor="image"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-semibold text-gray-700 mb-2"
               >
                 Image Path <span className="text-red-500">*</span>
               </label>
@@ -239,28 +276,51 @@ export default function AddProductPage() {
                 value={formData.image}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="/assets/product.jpg"
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-[#2563eb] transition-all"
+                placeholder="https://images.unsplash.com/photo-..."
               />
               <p className="mt-2 text-sm text-gray-500">
-                Enter the path to the image (e.g., /assets/product1.jpg)
+                Enter the image URL (e.g., https://images.unsplash.com/photo-... or /assets/product.jpg)
               </p>
             </div>
 
-            {/* Submit Button */}
-            <div className="flex gap-4">
+            {/* Submit Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
                 type="submit"
                 disabled={submitting}
-                className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 px-6 py-3 bg-[#2563eb] text-white rounded-lg font-semibold hover:bg-[#1e40af] transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg"
               >
                 {submitting ? 'Adding Product...' : 'Add Product'}
               </button>
               <Link
                 href="/products"
-                className="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center"
+                className="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors text-center"
               >
                 Cancel
+              </Link>
+            </div>
+
+            {/* Back to Products Link at Bottom */}
+            <div className="pt-6 border-t border-gray-200">
+              <Link
+                href="/products"
+                className="inline-flex items-center text-[#2563eb] hover:text-[#1e40af] font-medium transition-colors group"
+              >
+                <svg
+                  className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  />
+                </svg>
+                Back to Products
               </Link>
             </div>
           </form>
@@ -269,4 +329,3 @@ export default function AddProductPage() {
     </div>
   );
 }
-
