@@ -76,13 +76,14 @@ export default function ProductDetailsPage() {
                 fill
                 className="object-cover"
                 priority
+                unoptimized
               />
             </div>
 
             {/* Product Details */}
             <div className="p-8 lg:p-12 flex flex-col justify-center">
               <div className="mb-6">
-                <span className={`inline-block px-3 py-1.5 text-sm font-semibold ${getCategoryColor(product.category)} text-white rounded-md`}>
+                <span className={`inline-block px-3 py-1.5 text-sm font-semibold ${getCategoryColor(product.category)} text-white rounded-md backdrop-blur-md border border-white/20`}>
                   {product.category}
                 </span>
               </div>

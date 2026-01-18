@@ -1,6 +1,45 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 export default function Footer() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check authentication status
+    const checkAuth = () => {
+      if (typeof document !== 'undefined') {
+        const cookies = document.cookie.split(';');
+        let isAuth = false;
+        
+        for (let cookie of cookies) {
+          const [name, value] = cookie.trim().split('=');
+          if (name === 'auth-token' && value === 'authenticated') {
+            isAuth = true;
+            break;
+          }
+        }
+        
+        setIsAuthenticated(isAuth);
+      }
+    };
+    
+    // Initial check
+    checkAuth();
+    
+    // Check every 500ms for auth changes (especially after login/logout)
+    const interval = setInterval(checkAuth, 500);
+    
+    // Also check when window gains focus
+    const handleFocus = () => checkAuth();
+    window.addEventListener('focus', handleFocus);
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('focus', handleFocus);
+    };
+  }, []);
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="w-full px-8 md:px-10 py-12">
@@ -90,14 +129,16 @@ export default function Footer() {
                   Products
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/login"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Login
-                </Link>
-              </li>
+              {!isAuthenticated && (
+                <li>
+                  <Link
+                    href="/login"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    Login
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
 

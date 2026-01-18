@@ -230,18 +230,21 @@ export default function AddProductPage() {
                   htmlFor="image"
                   className="block text-sm font-semibold text-gray-700 mb-2"
                 >
-                  Image Path <span className="text-red-500">*</span>
+                  Image URL <span className="text-red-500">*</span>
                 </label>
                 <input
-                  type="text"
+                  type="url"
                   id="image"
                   name="image"
                   value={formData.image}
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-[#2563eb] transition-all"
-                  placeholder="https://images.unsplash.com/photo-..."
+                  placeholder="https://i.ibb.co/example.jpg"
                 />
+                <p className="mt-2 text-xs text-gray-500">
+                  Supports any direct image link from ImgBB, Cloudinary, Imgur, Unsplash, or any image hosting provider
+                </p>
               </div>
             </div>
 
